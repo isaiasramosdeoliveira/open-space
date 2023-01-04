@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "josefin";
+    src: url(../fonts/Josefin_Sans/static/JosefinSans-Regular.ttf);
+}
+
+@mixin font($value) {
+    @if ($value == josefin) {
+        font-family: 'josefin', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+}

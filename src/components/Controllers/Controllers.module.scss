@@ -1,0 +1,56 @@
+@import '../../style/scss/paletas';
+.controllers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    a{
+        transition: all;
+        transition-timing-function: ease-in-out;
+        transition-duration: .5s;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        margin: 10px;
+        span{
+            display: none;
+            padding: 5px;
+            background-color: $azulPrimary1;
+            font-size: 18px;
+            font-weight: 600;
+            top: -40px;
+            color: white;
+            position: absolute;
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            z-index: 2;
+        }
+        .mark{
+            display: none;
+            position: absolute;
+            top: -25px;
+            border-radius: 3px;
+            z-index: 1;
+            padding: 10px;
+            transform: rotate(45deg);
+            background-color: $azulPrimary1;
+        }
+        picture{
+            img{
+                width: 50px;
+                background-color: $branco300;
+                padding: 10px;
+                border-radius: 10px;
+                
+            }
+        }
+        &:hover{
+            span, .mark{
+                display: block;
+            }
+        }
+    }
+}

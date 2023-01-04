@@ -1,0 +1,23 @@
+@import '../../style/scss/fonts';
+header{
+    margin-bottom: 20px;
+    a{
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        h3{
+            display: flex;
+            text-transform: uppercase;
+            align-items: center;
+            margin-right: 10px;
+        }
+        picture{
+            img{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+            }
+        }
+    }
+}

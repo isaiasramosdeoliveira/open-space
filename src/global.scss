@@ -1,0 +1,13 @@
+@import 'style/scss/paletas';
+@import 'style/scss/fonts';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: $corPrimary5;
+    @include font('josefin');
+
+}

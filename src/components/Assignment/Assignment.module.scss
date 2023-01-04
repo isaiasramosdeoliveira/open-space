@@ -1,0 +1,66 @@
+@import '../../style/scss/paletas';
+.tarefas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    .tarefa{
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(196, 196, 196, 0.63);
+        width: 200px;
+        height: 250px;
+        border-radius: 15px;
+        margin: 10px;
+        p{
+            height: 140px;
+            padding: 10px;
+            overflow: hidden;
+            color: rgba(0, 0, 0, 0.616);
+        }
+        .priority{
+            display: flex;
+            justify-content: end;
+           i{
+               font-size: 20px;
+               color: rgb(233, 212, 23);
+           }
+        }
+        .status{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-top: 5px;
+            border-top: 0.5px solid rgba(128, 128, 128, 0.199);
+            i{
+                font-size: 20px;
+            }
+            .remove{
+                i{
+                    color: red;
+                }
+            }
+            .edit{
+                i{
+                    color: rgb(36, 33, 33);
+                }
+            }
+            button{
+                padding: 5px 10px ;
+                border: 1px solid $corPrimary5;
+                font-size: 16px;
+                a{color: $corPrimary1;}
+                border-radius: 5px;
+                background-color: transparent;
+                font-weight: 600;
+                &:hover{
+                    background-color: $corPrimary3;
+                    a{color: whitesmoke;}
+                }
+            }
+        }
+    }
+}
