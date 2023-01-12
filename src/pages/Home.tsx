@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import styles from "./styles/Home/Home.module.scss";
+
+import logo from './../../src/assets/img/logo.png';
+
 const Home = ({handleLoandingPage, value}: any) => {
   const [state, setState] = useState(value)
   return (
@@ -9,7 +12,7 @@ const Home = ({handleLoandingPage, value}: any) => {
       </div>
       <div className={styles.apresentation}>
         <picture>
-          <img src="./../../src/assets/img/logo.png" alt="logo" />
+          <img src={logo} alt="logo" />
         </picture>
         <h1>Open Space</h1>
         <h5>O lugar certo para você organizar sua vida.</h5>

@@ -3,6 +3,8 @@ import styles from './Menu.module.scss';
 import Header from '../Header/Header';
 import Assignment from '../Assignment/Assignment';
 
+import perfil from ''
+
 function Menu() {
   return (
     <section>
