@@ -39,13 +39,17 @@ section{
                 color: $corPrimary1;
                 background-color: whitesmoke;
                 width: 150px;
+                height: 40px;
                 padding: 10px;
                 margin: 8px;
                 border-radius: 50px;
+                &:hover{
+                    background-color: rgb(224, 224, 224);
+                }
             }
             .user{
-                width: 60px;
-                height: 60px;
+                width: 80px;
+                height: 80px;
                 margin: auto;
                 display: flex;
                 justify-content: center;
@@ -53,13 +57,13 @@ section{
                 margin-bottom: 10px;
                 border: 5px solid $corPrimary1;
                 picture{
-                    img{
-                        width: 30px;
+                    img, svg{
+                        width: 50px;
                     }
                 }
             }
             picture{
-                img{
+                img, svg{
                     width: 20px;
                 }
             }
@@ -90,7 +94,7 @@ section{
         }
         .controllers{
             picture{
-                img{
+                img, svg{
                     width: 50px;
                 }
             }
