@@ -39,8 +39,9 @@
             background-color: $azulPrimary1;
         }
         picture{
-            img{
+            img, svg{
                 width: 50px;
+                height: 50px;
                 background-color: $branco300;
                 padding: 10px;
                 border-radius: 10px;

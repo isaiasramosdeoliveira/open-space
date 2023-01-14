@@ -3,7 +3,6 @@ import styles from './Menu.module.scss';
 import Header from '../Header/Header';
 import Assignment from '../Assignment/Assignment';
 
-
 function Menu() {
   return (
     <section>
