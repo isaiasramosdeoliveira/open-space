@@ -4,16 +4,15 @@ import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
 import styles from './style/scss/App.module.scss';
 import Home from './pages/Home';
+import { useDispatch } from 'react-redux/es/exports';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
-let state = false
-export const Context = React.createContext(state);
+export const Context = React.createContext('');
 function App() {
-  const [value, setValue] = useState<Boolean>(state);
+  const {state}: any = useSelector((state) => state)
   return (
     <main>
-      <Context.Provider value={{value, setValue} as any}>
-        {value? <Menu/> : <Home value={{value, setValue}} />}
-      </Context.Provider>
+        {state? <Menu/> : <Home/>}
     </main>
   )
 }
