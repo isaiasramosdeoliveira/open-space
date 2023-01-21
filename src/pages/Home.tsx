@@ -9,7 +9,11 @@ const Home = () => {
   const dispatch = useDispatch()
   const {value, setValue} = useContext(Context) as any
   const handleActive = (): void =>{
-    dispatch(removeHome({state: true}))
+    const stateHome = sessionStorage.setItem('state',  `${true}`)
+    const state = sessionStorage.getItem("state")
+    console.log(state);
+    
+    dispatch(removeHome({state: state}))
   }
   return (
     <section className={styles.container}>
