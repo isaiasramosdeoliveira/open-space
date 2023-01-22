@@ -1,4 +1,5 @@
 @import '../../style/scss/fonts';
+@import '../../style/scss//paletas';
 header{
     margin-bottom: 20px;
     a{
@@ -6,6 +7,7 @@ header{
         display: flex;
         align-items: center;
         h3{
+            color: $corPrimary3;
             display: flex;
             text-transform: uppercase;
             align-items: center;

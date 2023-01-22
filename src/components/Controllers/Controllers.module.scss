@@ -16,9 +16,8 @@
         span{
             display: none;
             padding: 5px;
-            background-color: $azulPrimary1;
+            background-color: $corPrimary3;
             font-size: 18px;
-            font-weight: 600;
             top: -40px;
             color: white;
             position: absolute;
@@ -31,12 +30,12 @@
         .mark{
             display: none;
             position: absolute;
-            top: -25px;
+            top: -28px;
             border-radius: 3px;
             z-index: 1;
             padding: 10px;
             transform: rotate(45deg);
-            background-color: $azulPrimary1;
+            background-color: $corPrimary3;
         }
         picture{
             img, svg{

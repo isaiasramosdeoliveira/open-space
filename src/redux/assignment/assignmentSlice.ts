@@ -1,18 +1,19 @@
 import {createSlice} from '@reduxjs/toolkit'
 import { number } from 'prop-types'
 
-const seachSessionStorage = () => {
+const seachSessionStorage: Function = (): boolean => {
     if(!window.sessionStorage.getItem('state')){
         window.sessionStorage.setItem('state', "false")
         return true
     }else{
-        const state = window.sessionStorage.getItem("state")
+        const state: string | null = window.sessionStorage.getItem("state")
         if(state === 'false') return false
         if(state === 'true') return true
     }
+    return true
 }
 
-const initialState = {
+const initialState: Object = {
     state: seachSessionStorage(),
 }
 
@@ -21,7 +22,6 @@ const assignment = createSlice({
     initialState: initialState,
     reducers:{
         removeHome: (state, action) =>{
-
             return {...state, state: action.payload.state}
         }
     }

@@ -23,10 +23,13 @@
         .priority{
             display: flex;
             justify-content: end;
-           i{
-               font-size: 20px;
-               color: rgb(233, 212, 23);
-           }
+            i{
+                font-size: 25px;
+                color: rgb(196, 196, 196);
+                &:hover{
+                    color: rgb(233, 212, 23);
+                }
+            }
         }
         .status{
             display: flex;
@@ -37,27 +40,28 @@
             border-top: 0.5px solid rgba(128, 128, 128, 0.199);
             i{
                 font-size: 20px;
+                color: rgb(196, 196, 196);
             }
             .remove{
-                i{
+                i:hover{
                     color: red;
                 }
             }
             .edit{
-                i{
-                    color: rgb(36, 33, 33);
+                i:hover{
+                    color: rgb(138, 36, 233);
                 }
             }
             button{
                 padding: 5px 10px ;
-                border: 1px solid $corPrimary5;
+                border: 1px solid $corPrimary4;
                 font-size: 16px;
-                a{color: $corPrimary1;}
+                a{color: $corPrimary4;}
                 border-radius: 5px;
                 background-color: transparent;
                 font-weight: 600;
                 &:hover{
-                    background-color: $corPrimary3;
+                    background-color: $corPrimary4;
                     a{color: whitesmoke;}
                 }
             }

@@ -5,7 +5,7 @@ section{
     height: 85vh;
     background-color: $branco300;
     margin: auto;
-    margin-top: 25px;
+    margin-top: 15px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #211c687a;
@@ -17,59 +17,83 @@ section{
     }
     .display{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         height: 90%;
         .selects, .vision{
             height: 100%;
         }
         .selects{
-            padding: 50px;
-            width: 15%;
-            background-color: $corPrimary2;
-            display: grid;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            width: 10%;
+            background-color: $corPrimary2;
             box-shadow: 5px 5px 10px rgba(196, 196, 196, 0.63);
             border-radius: 10px;
-            a{
+            
+            .btn{
+                transition: all;
+                transition-duration: 200ms;
+                transition-timing-function: ease-in-out;
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
+                margin: auto;
                 color: $corPrimary1;
                 background-color: whitesmoke;
-                width: 150px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
                 padding: 10px;
                 margin: 8px;
-                border-radius: 50px;
+                border-radius: 10px;
+                p{
+                    display: none;
+                }
                 &:hover{
-                    background-color: rgb(224, 224, 224);
+                    display: flex;
+                    justify-content: space-between;
+                    width: 150px;
+                    p{
+                        margin-left: 20px;
+                        display: block;
+                    }
+                }
+                picture{
+                    img, svg{
+                        height: 25px;
+                        width: 25px;
+                    }
                 }
             }
             .user{
-                width: 80px;
-                height: 80px;
+                padding: 30px;
                 margin: auto;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-bottom: 10px;
+                width: 50px;
+                height: 50px;
+                background-color: whitesmoke;
+                padding: 30px;
+                margin-bottom: 5px;
                 border: 5px solid $corPrimary1;
+                border-radius: 50px;
                 picture{
                     img, svg{
-                        width: 50px;
+                        width: 45px;
                     }
                 }
-            }
-            picture{
-                img, svg{
-                    width: 20px;
+                p{
+                    display: none;
                 }
             }
 
         }
         .vision{
+            position: relative;
             padding: 20px;
             width: 85%;
             display: flex;
@@ -91,6 +115,17 @@ section{
                     border-radius: 50px;
                 }
             }
+            .increment{
+                position: absolute;
+                bottom: 0px;
+                display: flex;
+                justify-content: center;
+                i{
+                    cursor: pointer;
+                    font-size: 40px;
+                    color: $corPrimary3;
+                }
+            }
         }
         .controllers{
             picture{
@@ -101,4 +136,101 @@ section{
         }
     }
     
+}
+// Media desktop medio
+@media (max-width: 1070px) {}
+
+// Media tablet
+@media (max-width: 798px) {
+    section{
+        background-color: red;
+        .display{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            .selects{
+                position: absolute;
+                overflow: hidden;
+                bottom: -5px;
+                display: flex;
+                align-items: stretch;
+                width: 100%;
+                height: 60px;
+                background-color: $corPrimary2;
+                box-shadow: 5px 5px 10px rgba(196, 196, 196, 0.63);
+                border-radius: 10px;
+                z-index: 2;
+                .btn, .user{
+                    position: relative;
+                    top: -20px;
+                    transition: all;
+                    border: solid;
+                    transition-duration: 200ms;
+                    transition-timing-function: ease-in-out;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto;
+                    color: $corPrimary1;
+                    background-color: whitesmoke;
+                    width: 45px;
+                    height: 45px;
+                    padding: 10px;
+                    margin: 8px;
+                    border-radius: 10px;
+                    &:hover{
+                        display: flex;
+                        justify-content: space-between;
+                        width: 150px;
+                        p{
+                            margin-left: 20px;
+                            display: block;
+                        }
+                    }
+                    picture{
+                        svg{
+                            height: 25px;
+                            width: 25px;
+                            &:hover{
+                                a{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    width: 150px;
+                                p{
+                                    margin-left: 20px;
+                                    display: block;
+                                }
+                                }   
+                            }
+                        }
+                    }
+                }
+            }
+            .vision{
+                .increment{
+                    position: absolute;
+                    bottom: 50px;
+                    width: 50px;
+                    height: 50px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+// Media mini tablet
+@media (max-width: 598px) {
+    section{
+        background-color: orange;
+    }
+}
+
+// Media para mobile
+@media (max-width: 415px) {
+    section{
+        background-color: orangered;
+    }
 }
