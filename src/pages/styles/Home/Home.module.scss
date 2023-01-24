@@ -49,3 +49,10 @@
         }
     }
 }
+
+// Media para mobile
+@media (max-width: 415px) {
+    .container {
+        height: 80vh;
+    }
+}
