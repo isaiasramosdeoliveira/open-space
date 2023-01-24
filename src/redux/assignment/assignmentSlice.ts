@@ -15,6 +15,7 @@ const seachSessionStorage: Function = (): boolean => {
 
 const initialState: Object = {
     state: seachSessionStorage(),
+    display: false,
 }
 
 const assignment = createSlice({
@@ -23,9 +24,12 @@ const assignment = createSlice({
     reducers:{
         removeHome: (state, action) =>{
             return {...state, state: action.payload.state}
+        },
+        menuExpand: (state, action) => {
+            return {...state, display: action.payload.display}
         }
     }
 })
 
-export const {removeHome} = assignment.actions
+export const {removeHome, menuExpand} = assignment.actions
 export default assignment.reducer

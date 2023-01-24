@@ -16,14 +16,18 @@ section{
         }
     }
     .display{
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 90%;
-        .selects, .vision{
+        .selects1, .selects2 .vision{
             height: 100%;
         }
-        .selects{
+        .menuExpand, .menuExit {
+            display: none;
+        }
+        .selects1, .selects2{
             padding: 20px;
             display: flex;
             flex-wrap: wrap;
@@ -33,7 +37,15 @@ section{
             background-color: $corPrimary2;
             box-shadow: 5px 5px 10px rgba(196, 196, 196, 0.63);
             border-radius: 10px;
-            
+            &::-webkit-scrollbar-thumb{
+                width: 10px;
+                background-color: $corPrimary8;
+                border-radius: 50px;
+            }
+            &::-webkit-scrollbar{
+                width: 5px;
+                background-color: transparent;
+            }
             .btn{
                 transition: all;
                 transition-duration: 200ms;
@@ -92,10 +104,14 @@ section{
             }
 
         }
+        .selects2{
+            display: none;
+        }
         .vision{
             position: relative;
             padding: 20px;
-            width: 85%;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -143,14 +159,13 @@ section{
 // Media tablet
 @media (max-width: 798px) {
     section{
-        background-color: red;
         .display{
             position: relative;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            .selects{
+            .selects1, .selects2{
                 position: absolute;
                 overflow: hidden;
                 bottom: -5px;
@@ -224,13 +239,119 @@ section{
 // Media mini tablet
 @media (max-width: 598px) {
     section{
-        background-color: orange;
+        .display {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            .menuExpand, .menuExit {
+                display: block;
+                position: absolute;
+                top: -60px;
+                right: 0px;
+                background-color: red;
+                background-color: whitesmoke;
+                box-shadow: 0px 0px 15px 5px rgba(196, 196, 196, 0.63);
+                border-radius: 10px;
+                padding: 10px;
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+                z-index: 3;
+            }
+            .selects1, .selects2 {
+                transition: all;
+                transition-duration: 200px;
+                display: grid;
+                position: absolute;
+                overflow: hidden;
+                right: -5px;
+                top: 0px;
+                align-items: stretch;
+                width: 60px;
+                height: 90%;
+                background-color: $corPrimary2;
+                box-shadow: 5px 5px 10px rgba(196, 196, 196, 0.63);
+                border-radius: 10px;
+                z-index: 2;
+                .btn{
+                    position: relative;
+                    top: -20px;
+                    transition: all;
+                    border: solid;
+                    transition-duration: 200ms;
+                    transition-timing-function: ease-in-out;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto;
+                    color: $corPrimary1;
+                    background-color: whitesmoke;
+                    width: 45px;
+                    height: 45px;
+                    padding: 10px;
+                    margin: 8px;
+                    border-radius: 10px;
+                    &:hover {
+                        display: flex;
+                        justify-content: center;
+                        width: 45px;
+                        p {
+                            display: none;
+                        }
+                    }
+                    picture {
+                        svg {
+                            height: 25px;
+                            width: 25px;
+                            &:hover {
+                                a {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    width: 150px;
+
+                                    p {
+                                        margin-left: 20px;
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .user{
+                    &:hover {
+                        display: flex;
+                        justify-content: center;
+                        width: 45px;
+
+                        p {
+                            display: none;
+                        }
+                    }
+                }
+                
+            }
+            .selects1{
+                display: none;
+            }
+            .vision {
+                .increment {
+                    position: absolute;
+                    bottom: -10px;
+                    width: 50px;
+                    height: 50px;
+                    z-index: 1;
+                }
+            }
+        }
     }
 }
 
 // Media para mobile
 @media (max-width: 415px) {
     section{
-        background-color: orangered;
     }
 }
