@@ -1,17 +1,20 @@
 import React from 'react';
 import styles from './Assignment.module.scss';
+import { useSelector } from 'react-redux';
 
 function Assignment() {
+  const {assignment}: Array<Object> | any = useSelector(state => state)    
   return (
     <div className={styles.tarefas}>
-        <div className={styles.tarefa}>
+        {assignment? assignment?.map((assignment: any) => (
+          <div className={styles.tarefa} key={assignment.id}>
             <div className={styles.priority}>
               <a href="#" >
               <i className="fa-regular fa-bookmark"></i>
               </a>
             </div>
-            <h3>Tarefa</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, alias dolor fugit sed, aperiam nobis minus animi voluptatum ipsam, maxime fuga accusantium sit voluptates nemo. Eaque non quod qui quas?</p>
+            <h3>{assignment.title}</h3>
+            <p>{assignment.body}</p>
             <div className={styles.status}>
               <a href="" className={styles.remove}>
                 <i className="fa-solid fa-trash-can"></i>
@@ -23,7 +26,8 @@ function Assignment() {
                 <i className="fa-solid fa-pen"></i>
               </a>
             </div>
-        </div>
+          </div>
+        )) : <div className={styles.empty}>Vazio</div>}
     </div>
   )
 }

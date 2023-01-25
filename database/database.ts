@@ -1,5 +1,2 @@
-const databse = {
-    Home:{
-        state: true
-    }
-}
+const database: Array<Object> = []
+export default database;

@@ -1,0 +1,28 @@
+input,
+input[type='button'] {
+    min-width: 250px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: none;
+    border: 1px solid rgba(128, 128, 128, 0.438);
+    border-radius: 5px;
+
+    &:focus {
+        outline: 1.5px solid rgba(128, 128, 128, 0.438);
+    }
+}
+
+input[type='button'] {
+    cursor: pointer;
+    background-color: $corPrimary6;
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: 600;
+
+    &:hover {
+        transition: all;
+        transition-duration: 200ms;
+        transition-timing-function: ease-in-out;
+        background-color: $corPrimary2;
+    }
+}

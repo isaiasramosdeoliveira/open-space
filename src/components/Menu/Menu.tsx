@@ -3,14 +3,21 @@ import styles from './Menu.module.scss';
 import Header from '../Header/Header';
 import Assignment from '../Assignment/Assignment';
 import { useDispatch, useSelector } from 'react-redux';
-import { menuExpand } from '../../redux/assignment/assignmentSlice';
+import { DisplayForm, menuExpand } from '../../redux/assignment/assignmentSlice';
 import SelectsWeb from '../SelectsWeb/SelectsWeb';
 import SelectsMobile from '../SelectsMobile/SelectsMobile';
+import Form from '../Form/Form';
 
 function Menu() {
+  const [textForm, settextForm] = useState('Criar')
+
   const container = document.querySelector("body") as HTMLBodyElement;
   const dispatch = useDispatch()
   const {display}: any = useSelector(state => state)
+  const {stateForm}: boolean | any = useSelector(state => state)
+  const handleIncrementAssignment = () =>{
+    dispatch(DisplayForm({stateForm: true}))
+  }
   const handleExpandMenu = (e: Event) =>{
     e.preventDefault()
     dispatch(menuExpand({display: true}))
@@ -45,9 +52,10 @@ function Menu() {
             <Assignment/>
           </div>
           <div className={styles.increment}>
-            <i className="fa-solid fa-circle-plus"></i>
+            <i onClick={handleIncrementAssignment}  className="fa-solid fa-circle-plus"></i>
           </div>
         </div>
+        { stateForm? <Form value={textForm} />: ''}
       </article>
     </section>
   )
