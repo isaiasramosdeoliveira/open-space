@@ -1,5 +1,5 @@
 import React from 'react'
-import './Header.module.scss';
+import styles from './Header.module.scss';
 import logo from './img/logo.png';
 const Header = () => {
   return (
@@ -10,6 +10,9 @@ const Header = () => {
                 <img src={logo} alt="" />
             </picture>
         </a>
+        <span className={styles.warningSucess}>
+          
+        </span>
       </header>
   )
 }

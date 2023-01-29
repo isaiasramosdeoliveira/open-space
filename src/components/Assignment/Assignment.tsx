@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Assignment.module.scss';
 import { useSelector } from 'react-redux';
-
+import empaty from './empty.png';
 function Assignment() {
-  const {assignment}: Array<Object> | any = useSelector(state => state)    
+  const {assignment}: Array<Object> | any = useSelector(state => state)
   return (
     <div className={styles.tarefas}>
-        {assignment? assignment?.map((assignment: any) => (
+        {assignment[0]? assignment?.map((assignment: any) => (
           <div className={styles.tarefa} key={assignment.id}>
             <div className={styles.priority}>
               <a href="#" >
@@ -15,6 +15,7 @@ function Assignment() {
             </div>
             <h3>{assignment.title}</h3>
             <p>{assignment.body}</p>
+            <small>{assignment.date}</small>
             <div className={styles.status}>
               <a href="" className={styles.remove}>
                 <i className="fa-solid fa-trash-can"></i>
@@ -27,7 +28,14 @@ function Assignment() {
               </a>
             </div>
           </div>
-        )) : <div className={styles.empty}>Vazio</div>}
+        )) : <div className={styles.empty}>
+          <p>
+            <em>Nenhuma tarefa.</em>
+          </p>
+          <picture>
+            <img src={empaty} alt="imagem de sem tarefas" />
+          </picture>
+          </div>}
     </div>
   )
 }
